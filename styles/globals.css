@@ -1,26 +1,103 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer base {
+  .koulen {
+    font-family: "Koulen", cursive;
   }
-  body {
-    color: white;
-    background: black;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5 {
+    font-family: "Koulen", cursive;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: 96px;
+    line-height: 90%;
+  }
+
+  h2 {
+    font-size: 64px;
+    line-height: 60px;
+  }
+
+  h3 {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  h4 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  h5 {
+    font-size: 20px;
+    line-height: 18px;
+  }
+
+  .body-large {
+    @apply text-lg;
+    font-family: "General Sans", sans-serif;
+    line-height: 32px;
+    letter-spacing: 0%;
+  }
+
+  .body-regular {
+    @apply text-base;
+    font-family: "General Sans", sans-serif;
+    line-height: 24px;
+    letter-spacing: -2%;
+  }
+
+  .body-small {
+    @apply text-sm;
+    font-family: "General Sans", sans-serif;
+    line-height: 24px;
+    letter-spacing: 0%;
+  }
+
+  .caption {
+    @apply text-xs;
+    font-family: "General Sans", sans-serif;
+    line-height: 16px;
+    letter-spacing: 0%;
+  }
+
+  .button-card {
+    @apply pl-4 pr-6 py-2 bg-white rounded-full;
+  }
+
+  .wrapper {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .white-gradient::after {
+    content: "asdasdasd";
+    color: transparent;
+    height: 80px;
+    background-color: red;
+    position: absolute;
+    bottom: 80px;
+    width: 88.5%;
+    background: linear-gradient(rgb(0, 0, 0, 0), rgb(255, 255, 255));
+  }
+
+  .white-gradient::before {
+    content: "asdasdasd";
+    color: transparent;
+    height: 80px;
+    background-color: red;
+    position: absolute;
+    top: 80px;
+    width: 88.5%;
+    background: linear-gradient(rgb(255, 255, 255), rgb(0, 0, 0, 0));
   }
 }

@@ -416,7 +416,19 @@ export default function Home() {
           <div className="w-6/12 relative">
             <img src="/chara/speakers.svg" alt="" className="w-full h-full" />
 
-            <div className="button-card bg-black flex items-center gap-2 w-max absolute">
+            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[76px] left-[90px]">
+              <Image
+                src="/icons/feature-interests.svg"
+                width={16}
+                height={16}
+                alt="categories"
+              />
+              <p className="body-regular font-semibold text-white">
+                Category...
+              </p>
+            </div>
+
+            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[124px] left-[136px]">
               <Image
                 src="/icons/feature-interests.svg"
                 width={16}
@@ -447,6 +459,202 @@ export default function Home() {
                   mind-blowing 💥
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center">
+          <div className="w-6/12 relative">
+            {/* <img src="/chara/speakers.svg" alt="" className="w-full h-full" />
+
+            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[76px] left-[90px]">
+              <Image
+                src="/icons/feature-interests.svg"
+                width={16}
+                height={16}
+                alt="categories"
+              />
+              <p className="body-regular font-semibold text-white">
+                Category...
+              </p>
+            </div>
+
+            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[124px] left-[136px]">
+              <Image
+                src="/icons/feature-interests.svg"
+                width={16}
+                height={16}
+                alt="categories"
+              />
+              <p className="body-regular font-semibold text-white">
+                Category...
+              </p>
+            </div>
+
+            <div className="rounded-[16px] bg-white border-2 border-black p-4 absolute bottom-3 right-[70px] flex gap-4 items-start">
+              <Image
+                src="/chara/oliver.svg"
+                width={32}
+                height={32}
+                alt="Oliver"
+              />
+              <div>
+                <p className="caption text-timber font-semibold mb-0.5">
+                  Oliver
+                </p>
+                <p className="caption font-medium">
+                  Great topic and speakers! the
+                  <br />
+                  fact that this event is free is
+                  <br />
+                  mind-blowing 💥
+                </p>
+              </div>
+            </div> */}
+          </div>
+          <div className="p-12 w-6/12 flex flex-col gap-8">
+            <h2>
+              Plan Ahead
+              <br />
+              with <span className="text-mango">Scheduling</span>
+            </h2>
+            <p className="body-regular text-stromy">
+              [description goes in here] blorem blipsum dolor sit bamat minim
+              mollit non deserunt ullamco lorem ipsum bolor sit amat est.
+            </p>
+
+            <button className="flex items-center gap-2 button-card border-2 border-transparent bg-black w-max text-white">
+              <Image
+                src={`/icons/feature-arrow_circle_right_white.svg`}
+                alt="arrow"
+                width={16}
+                height={16}
+              />
+              <span className="body-regular font-semibold">Get Started</span>
+            </button>
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center">
+          <div className="p-12 w-6/12 flex flex-col gap-8">
+            <h2>
+              Level up
+              <br />
+              your <span className="text-crayola">engagement</span>
+            </h2>
+            <p className="body-regular text-stromy">
+              [description goes in here] blorem blipsum dolor sit bamat minim
+              mollit non deserunt ullamco lorem ipsum bolor sit amat est.
+            </p>
+
+            <button className="flex items-center gap-2 button-card border-2 border-black w-max">
+              <Image
+                src={`/icons/feature-arrow_circle_right.svg`}
+                alt="arrow"
+                width={16}
+                height={16}
+              />
+              <span className="body-regular font-semibold">Get Started</span>
+            </button>
+          </div>
+          <div className="w-6/12 relative">
+            {/* <img src="/chara/speakers.svg" alt="" className="w-full h-full" />
+
+            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[76px] left-[90px]">
+              <Image
+                src="/icons/feature-interests.svg"
+                width={16}
+                height={16}
+                alt="categories"
+              />
+              <p className="body-regular font-semibold text-white">
+                Category...
+              </p>
+            </div>
+
+            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[124px] left-[136px]">
+              <Image
+                src="/icons/feature-interests.svg"
+                width={16}
+                height={16}
+                alt="categories"
+              />
+              <p className="body-regular font-semibold text-white">
+                Category...
+              </p>
+            </div>
+
+            <div className="rounded-[16px] bg-white border-2 border-black p-4 absolute bottom-3 right-[70px] flex gap-4 items-start">
+              <Image
+                src="/chara/oliver.svg"
+                width={32}
+                height={32}
+                alt="Oliver"
+              />
+              <div>
+                <p className="caption text-timber font-semibold mb-0.5">
+                  Oliver
+                </p>
+                <p className="caption font-medium">
+                  Great topic and speakers! the
+                  <br />
+                  fact that this event is free is
+                  <br />
+                  mind-blowing 💥
+                </p>
+              </div>
+            </div> */}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cloudy py-20">
+        <div className="wrapper">
+          <div className="flex justify-between items-end">
+            <HeadTitle first="Subscribe" sec="Our Newsletter" />
+
+            <div className="flex gap-6 w-5/12 mb-16">
+              <Image
+                src="/icons/speaker.svg"
+                width={32}
+                height={32}
+                alt="Speaker"
+              />
+              <p className="body-regular font-medium text-stromy">
+                Get the latest free event conference notification and a reminder
+                of upcoming speakers.
+              </p>
+            </div>
+          </div>
+
+          <div className="p-8 flex flex-col gap-6 w-6/12">
+            <input
+              type="text"
+              className="py-6 px-8 rounded-full bg-transparent border border-smoke body-regular font-medium text-smoke"
+              placeholder="Your email address"
+            />
+
+            <div className="flex justify-between">
+              <div className="p-4 flex gap-4 items-center">
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  className="w-6 h-6 rounded-lg"
+                />
+                <p className="caption">
+                  I agree with <span className="underline">Privacy Policy</span>{" "}
+                  and <br />
+                  <span className="underline">Terms of Conditions</span>
+                </p>
+              </div>
+
+              <button className="button-card py px-8 bg-black flex items-center gap-4">
+                <span className="text-white body-large font-semibold">
+                  Subscribe
+                </span>
+                <Image src="/icons/send.svg" width={18.22} height={16} alt="" />
+              </button>
             </div>
           </div>
         </div>

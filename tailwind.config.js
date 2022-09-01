@@ -22,7 +22,7 @@ module.exports = {
         seafoam: "#CCE0DE",
         sage: "#EEF1EC",
         timber: "#BBA28B",
-        oyster: "#FFD6AD",
+        oyster: "#E1D6CC",
         cloudy: "#F5F4F3",
       },
     },

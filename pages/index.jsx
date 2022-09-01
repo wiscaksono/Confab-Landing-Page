@@ -4,6 +4,8 @@ import Image from "next/image";
 import { faker } from "@faker-js/faker";
 import React, { useRef, useState } from "react";
 import HeadTitle from "../components/HeadTitle";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export default function Home() {
   return (
@@ -324,7 +326,7 @@ export default function Home() {
         <div className="flex justify-between items-end mb-12">
           <HeadTitle first={`Upcoming`} sec={`Events`} />
 
-          <div className="flex items-center py-6 px-8 gap-6">
+          <div className="flex items-center py-6 px-8 gap-6 ">
             <button className="button-card flex items-center gap-2 border-2 border-black">
               <Image
                 src="/icons/remove_red_eye.svg"
@@ -363,8 +365,40 @@ export default function Home() {
               join or host (virtual events).
             </p>
           </div>
-          <CardEvent />
-          <CardEvent />
+
+          <Swiper
+            slidesPerView={2}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+            className={`w-8/12 reset-swiper`}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            // spaceBetween={40}
+          >
+            <SwiperSlide>
+              <CardEvent />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardEvent />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardEvent />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardEvent />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardEvent />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardEvent />
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardEvent />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
 
@@ -404,7 +438,7 @@ export default function Home() {
 
             <button className="flex items-center gap-2 button-card border-2 border-black w-max">
               <Image
-                src={`/icons/feature-arrow_circle_right.svg`}
+                src={`/icons/arrow_circle_right_back.svg`}
                 alt="arrow"
                 width={16}
                 height={16}
@@ -418,13 +452,13 @@ export default function Home() {
 
             <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[76px] left-[90px]">
               <Image
-                src="/icons/feature-interests.svg"
+                src="/icons/emoji_objects.svg"
                 width={16}
                 height={16}
                 alt="categories"
               />
               <p className="body-regular font-semibold text-white">
-                Category...
+                My Topic...
               </p>
             </div>
 
@@ -465,52 +499,42 @@ export default function Home() {
 
         <div className="flex justify-between items-center">
           <div className="w-6/12 relative">
-            {/* <img src="/chara/speakers.svg" alt="" className="w-full h-full" />
+            <img src="/chara/scheduling.svg" alt="" className="w-full h-full" />
 
-            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[76px] left-[90px]">
-              <Image
-                src="/icons/feature-interests.svg"
-                width={16}
-                height={16}
-                alt="categories"
-              />
-              <p className="body-regular font-semibold text-white">
-                Category...
-              </p>
-            </div>
-
-            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[124px] left-[136px]">
-              <Image
-                src="/icons/feature-interests.svg"
-                width={16}
-                height={16}
-                alt="categories"
-              />
-              <p className="body-regular font-semibold text-white">
-                Category...
-              </p>
-            </div>
-
-            <div className="rounded-[16px] bg-white border-2 border-black p-4 absolute bottom-3 right-[70px] flex gap-4 items-start">
-              <Image
-                src="/chara/oliver.svg"
-                width={32}
-                height={32}
-                alt="Oliver"
-              />
+            <div className="rounded-[16px] bg-cloudy border-2 border-smoke p-4 absolute bottom-[20px] left-[106px] flex gap-4 items-start">
+              <div className="p-2 bg-oyster rounded-full flex items-center justify-center">
+                <Image
+                  src="/icons/today.svg"
+                  width={16}
+                  height={16}
+                  alt="Oliver"
+                />
+              </div>
               <div>
                 <p className="caption text-timber font-semibold mb-0.5">
-                  Oliver
+                  Reminder
                 </p>
                 <p className="caption font-medium">
-                  Great topic and speakers! the
-                  <br />
-                  fact that this event is free is
-                  <br />
-                  mind-blowing 💥
+                  You have 2 events coming up...
                 </p>
               </div>
-            </div> */}
+            </div>
+            <div className="rounded-[16px] bg-cloudy border-2 border-smoke p-4 absolute bottom-[97px] right-[105px] flex gap-4 items-start">
+              <div className="p-2 bg-oyster rounded-full flex items-center justify-center">
+                <Image
+                  src="/icons/today.svg"
+                  width={16}
+                  height={16}
+                  alt="Oliver"
+                />
+              </div>
+              <div>
+                <p className="caption text-timber font-semibold mb-0.5">
+                  My Schedule
+                </p>
+                <p className="caption font-medium">My topic for next week...</p>
+              </div>
+            </div>
           </div>
           <div className="p-12 w-6/12 flex flex-col gap-8">
             <h2>
@@ -549,7 +573,7 @@ export default function Home() {
 
             <button className="flex items-center gap-2 button-card border-2 border-black w-max">
               <Image
-                src={`/icons/feature-arrow_circle_right.svg`}
+                src={`/icons/arrow_circle_right_back.svg`}
                 alt="arrow"
                 width={16}
                 height={16}
@@ -557,34 +581,79 @@ export default function Home() {
               <span className="body-regular font-semibold">Get Started</span>
             </button>
           </div>
+
           <div className="w-6/12 relative">
-            {/* <img src="/chara/speakers.svg" alt="" className="w-full h-full" />
+            <img src="/chara/engagement.svg" alt="" className="w-full h-full" />
 
-            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[76px] left-[90px]">
+            <div className="absolute flex items-center gap-2 bg-crayola py-1.5 pr-3 pl-2 border-2 border-black top-[60px] left-[132px] animate-pulse rounded-full">
               <Image
-                src="/icons/feature-interests.svg"
-                width={16}
-                height={16}
-                alt="categories"
+                src="/icons/stream.svg"
+                width={12}
+                height={12}
+                alt="Live Stream"
+                className="animate-spin"
               />
-              <p className="body-regular font-semibold text-white">
-                Category...
-              </p>
+              <p className="caption font-semibold text-white">LIVE</p>
             </div>
 
-            <div className="button-card bg-black flex items-center gap-2 w-max absolute top-[124px] left-[136px]">
-              <Image
-                src="/icons/feature-interests.svg"
-                width={16}
-                height={16}
-                alt="categories"
-              />
-              <p className="body-regular font-semibold text-white">
-                Category...
-              </p>
+            <div className="p-2 bg-white rounded-full absolute  grid grid-cols-5 gap-2 left-1/2 -translate-x-1/2 border-black border-2 bottom-[50px]">
+              <button className="p-2 bg-cloudy rounded-full">
+                <img src="/icons/volume_up.svg" alt="" width={12} height={12} />
+              </button>
+              <button className="p-2 hover:bg-cloudy rounded-full transition-colors">
+                <img
+                  src="/icons/volume_off.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                />
+              </button>
+              <button className="p-2  hover:bg-cloudy rounded-full transition-colors">
+                <img src="/icons/pause.svg" alt="" width={12} height={12} />
+              </button>
+              <button className="p-2 hover:bg-cloudy rounded-full transition-colors">
+                <img src="/icons/subtitles.svg" alt="" width={12} height={12} />
+              </button>
+              <button className="p-2 hover:bg-cloudy rounded-full transition-colors">
+                <img
+                  src="/icons/fullscreen.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                />
+              </button>
             </div>
 
-            <div className="rounded-[16px] bg-white border-2 border-black p-4 absolute bottom-3 right-[70px] flex gap-4 items-start">
+            <div className="rounded-[16px] bg-white border-2 border-black p-4 absolute top-[109px] left-[96px] flex gap-4 items-start">
+              <Image
+                src="/chara/layla.svg"
+                width={32}
+                height={32}
+                alt="Oliver"
+              />
+              <div>
+                <p className="caption text-mango font-semibold mb-0.5">Layla</p>
+                <p className="caption font-medium">So Inspiring... 💡</p>
+              </div>
+            </div>
+            <div className="rounded-[16px] bg-white border-2 border-black p-4 absolute bottom-[108px] right-[92px] flex gap-4 items-start">
+              <Image
+                src="/chara/mark.svg"
+                width={32}
+                height={32}
+                alt="Oliver"
+              />
+              <div>
+                <p className="caption text-crayola font-semibold mb-0.5">
+                  Mark
+                </p>
+                <p className="caption font-medium">
+                  Today's topic and speakers are 🔥🔥🔥
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-[16px] bg-white border-2 border-black p-4 absolute bottom-[73px] left-5 flex gap-4 items-start">
               <Image
                 src="/chara/oliver.svg"
                 width={32}
@@ -592,28 +661,20 @@ export default function Home() {
                 alt="Oliver"
               />
               <div>
-                <p className="caption text-timber font-semibold mb-0.5">
-                  Oliver
-                </p>
-                <p className="caption font-medium">
-                  Great topic and speakers! the
-                  <br />
-                  fact that this event is free is
-                  <br />
-                  mind-blowing 💥
-                </p>
+                <p className="caption text-opal font-semibold mb-0.5">Steven</p>
+                <p className="caption font-medium">Need more of this !</p>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-cloudy py-20">
         <div className="wrapper">
-          <div className="flex justify-between items-end">
+          <div className="flex justify-between items-end mb-16">
             <HeadTitle first="Subscribe" sec="Our Newsletter" />
 
-            <div className="flex gap-6 w-5/12 mb-16">
+            <div className="flex gap-6 w-5/12  py-6 px-8 items-center">
               <Image
                 src="/icons/speaker.svg"
                 width={32}
@@ -621,8 +682,9 @@ export default function Home() {
                 alt="Speaker"
               />
               <p className="body-regular font-medium text-stromy">
-                Get the latest free event conference notification and a reminder
-                of upcoming speakers.
+                Get the latest{" "}
+                <span className="font-semibold text-crayola">free</span> event
+                conference notification and a reminder of upcoming speakers.
               </p>
             </div>
           </div>
@@ -643,9 +705,14 @@ export default function Home() {
                   className="w-6 h-6 rounded-lg"
                 />
                 <p className="caption">
-                  I agree with <span className="underline">Privacy Policy</span>{" "}
+                  I agree with{" "}
+                  <span className="underline cursor-pointer">
+                    Privacy Policy
+                  </span>{" "}
                   and <br />
-                  <span className="underline">Terms of Conditions</span>
+                  <span className="underline cursor-pointer">
+                    Terms of Conditions
+                  </span>
                 </p>
               </div>
 
@@ -710,7 +777,7 @@ const CardEvent = () => {
   const date = faker.date.month();
 
   return (
-    <div className="w-4/12 p-8 bg-cloudy rounded-[32px] h-[480px] flex flex-col justify-between border-4 hover:border-black border-transparent transition-colors">
+    <div className=" p-8 bg-cloudy rounded-[32px] h-[480px] flex flex-col justify-between border-4 hover:border-black border-transparent transition-colors ml-10">
       <div>
         <h3 className="mb-4">{title}</h3>
         <h5 className="text-crayola">
